@@ -26,7 +26,7 @@ python -m pip install cookiecutter
   - You'll have to press enter or type your own values to replace defaults for each option (more info below)
 
 ```sh
-cookiecutter https://github.com/gerardrbentley/
+cookiecutter https://github.com/gerardrbentley/cookiecutter-streamlit
 ```
 
 ## All Config Options
@@ -79,3 +79,9 @@ git push
 ```
 
 *NOTE:* in general don't `git add .` useless files into your repo. This skeleton should be all useful though! Also take some time to learn branching if you're working with others!
+
+## More Streamlit Resources
+
+- [Official Docs](https://docs.streamlit.io/)
+- [Official App Gallery](https://streamlit.io/gallery)
+- [Official Components Gallery](https://streamlit.io/components)
