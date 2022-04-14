@@ -1,0 +1,5 @@
+{% if cookiecutter.project_template == 'image_processing' %}
+httpx==0.22.0
+opencv-python-headless==4.5.5.64
+{% endif -%}
+streamlit==1.8.1

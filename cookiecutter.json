@@ -1,0 +1,11 @@
+{
+    "github_username": "gerardrbentley",
+    "licensor_name": "Gerard Bentley",
+    "project_name": "Streamlit App",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_short_description": "Streamlit App Boilerplate that contains everything you need to get running.",
+    "include_streamlit_config": ["yes", "no, don't include .streamlit/config.toml"],
+    "include_heroku_deployment": ["no, don't include Procfile, app.json, runtime.txt", "yes"],
+    "include_gitpod_config": ["no, don't include .gitpod.yml", "yes"],
+    "project_template": ["hello_world", "cheat_sheet", "image_processing"]
+}

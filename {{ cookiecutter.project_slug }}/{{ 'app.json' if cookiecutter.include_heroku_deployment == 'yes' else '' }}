@@ -1,0 +1,9 @@
+{
+    "name": "{{ cookiecutter.project_name }}",
+    "description": "{{ cookiecutter.project_short_description }}",
+    "repository": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
+    "keywords": [
+        "streamlit",
+        "python"
+    ]
+}

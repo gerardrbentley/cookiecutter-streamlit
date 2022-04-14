@@ -1,0 +1,6 @@
+tasks:
+  - init: pip3 install -r requirements.txt
+    command: streamlit run streamlit_app.py
+ports:
+  - port: 8501
+    onOpen: open-browser
