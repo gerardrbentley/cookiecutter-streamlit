@@ -1,0 +1,27 @@
+[tool.black]
+target-version = ['py39']
+exclude = '''
+/(\.git | \.cache | \.pytest_cache | venv | coverage)/
+'''
+
+[tool.isort]
+profile = 'black'
+multi_line_output = 3
+skip = ['.cache', '.pytest_cache', 'venv', 'coverage', '.git']
+
+[tool.coverage.run]
+omit = ['tests/*']
+
+[tool.coverage.report]
+exclude_lines = [
+    'pragma: no cover',
+    'def __repr__',
+    'if settings.DEBUG',
+    'raise AssertionError',
+    'raise NotImplementedError',
+    'if 0:',
+    'if __name__ == .__main__.:',
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"

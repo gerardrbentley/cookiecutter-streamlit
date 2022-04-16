@@ -39,7 +39,7 @@ python -m pip install cookiecutter
 cookiecutter https://github.com/gerardrbentley/cookiecutter-streamlit
 ```
 
-- Open up your new project directory in your favorite text editor!
+- Open up your new project directory in your favorite text editor to get hacking!
   - Or just run it!
 
 ```sh

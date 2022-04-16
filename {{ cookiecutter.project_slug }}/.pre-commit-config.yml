@@ -1,0 +1,39 @@
+repos:
+  -   repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.1.0
+      hooks:
+        - id: check-added-large-files
+          name: Check for added large files
+          entry: check-added-large-files
+        - id: check-json
+          name: Check JSON
+        - id: detect-private-key
+          name: Check for Sensitive Private keys
+        - id: requirements-txt-fixer
+          name: Reorder Requirements txt
+        - id: check-toml
+          name: Check Toml
+          entry: check-toml
+          types: [toml]
+        - id: check-yaml
+          name: Check Yaml
+          entry: check-yaml
+          types: [yaml]
+        - id: end-of-file-fixer
+          name: Fix End of Files
+          entry: end-of-file-fixer
+          types: [text]
+          stages: [commit, push, manual]
+        - id: trailing-whitespace
+          name: Trim Trailing Whitespace
+          entry: trailing-whitespace-fixer
+          types: [text]
+          stages: [commit, push, manual]
+  - repo: local
+    hooks:
+      - id: make-lint
+        name: make-lint
+        entry: make
+        language: system
+        types: [make]
+        args: ["lint"]

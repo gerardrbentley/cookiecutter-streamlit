@@ -1,6 +1,7 @@
 {% set do_streamlit = cookiecutter.include_streamlit_config == 'yes' -%}
 {% set do_heroku = cookiecutter.include_heroku_deployment == 'yes' -%}
 {% set do_gitpod = cookiecutter.include_gitpod_config == 'yes' -%}
+{% set do_dev = cookiecutter.include_dev_setup == 'yes' -%}
 
 # {{ cookiecutter.project_name }}
 
@@ -26,6 +27,13 @@ Built with ❤️ by [{{ cookiecutter.github_username }}](https://github.com/{{ 
 {%- if do_streamlit %}
 - `.streamlit/config.toml`: Customizes the behaviour of streamlit without specifying command line arguments (`streamlit config show`)
 {% endif -%}
+{%- if do_dev %}- `Makefile`: Provides useful commands for working on the project such as `run`, `lint`, `test`, and `test-e2e`
+- `requirements.dev.txt`: Provides packages useful for development but not necessarily production deployment. Also includes all of `requirements.txt` via `-r`
+- `pyproject.toml`: Provides a main configuration point for Python dev tools
+- `.flake8`: Because `flake8` doesn't play nicely with `pyproject.toml` out of the box
+- `.pre-commit-config.yml`: Provides safeguards for what you commit and push to your repo
+- `tests/`: Folder for tests to be picked up by `pytest`
+{% endif -%}
 {%- if do_heroku %}- `app.json`: Provides "Deploy to Heroku" functionality / specification
 - `Procfile`: Special file to tell Heroku how to run our app (`streamlit run`) (see [docs](https://devcenter.heroku.com/articles/procfile))
 - `runtime.txt`: Special file to tell Heroku which python version to use (see [supported runtimes](https://devcenter.heroku.com/articles/python-support#supported-runtimes))
@@ -42,7 +50,10 @@ git clone git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.proj
 
 # Go to correct directory
 cd {{ cookiecutter.project_slug }}
-
+{% if do_dev %}
+# Run the streamlit app (will install dependencies in a virtualenvironment in the folder venv)
+make run
+{% else %}
 # Create virtual environment for this project
 python -m venv venv
 
@@ -55,10 +66,29 @@ python -m pip install -r requirements.txt
 
 # Run the streamlit app
 streamlit run streamlit_app.py
+{% endif -%}
 ```
 
 Open your browser to [http://localhost:8501/](http://localhost:8501/) if it doesn't open automatically.
+{% if do_dev %}
+### Local Development
 
+The `Makefile` and development requirements provide some handy Python tools for writing better code.
+See the `Makefile` for more detail
+
+```sh
+# Run black, isort, and flake8 on your codebase
+make lint
+# Run pytest with coverage report on all tests not marked with `@pytest.mark.e2e`
+make test
+# Run pytest on tests marked e2e (NOTE: e2e tests require `make run` to be running in a separate terminal)
+make test-e2e
+# Run pytest on tests marked e2e and replace visual baseline images
+make test-e2e-baseline
+# After running tests, display the coverage html report on localhost
+make coverage
+```
+{% endif -%}
 ## Deploy
 
 For the easiest experience, deploy to [Streamlit Cloud](https://streamlit.io/cloud)
