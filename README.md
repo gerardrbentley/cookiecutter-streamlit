@@ -20,6 +20,7 @@ Share it on twitter `@garsbar35plus` or in the [Streamlit Discuss Forums](https:
     - [image_processing](#image_processing)
   - [Connect to your own Repo](#connect-to-your-own-repo)
   - [More Streamlit Resources](#more-streamlit-resources)
+  - [Roadmap](#roadmap)
 
 ## Getting Started
 
@@ -107,3 +108,10 @@ git push
 - [Official Docs](https://docs.streamlit.io/)
 - [Official App Gallery](https://streamlit.io/gallery)
 - [Official Components Gallery](https://streamlit.io/components)
+
+## Roadmap
+
+- [ ] 🖥 Windows support
+- [ ] 📈 Data Science template
+- [ ] 🗄 Database template
+- [ ] 📓 Text Processing template
