@@ -8,8 +8,5 @@
     "include_dev_setup": ["yes", "no, don't include Makefile, requirements.dev.txt, pyproject.toml, .pre-commit-config.yml, .flake8"],
     "include_heroku_deployment": ["no, don't include Procfile, app.json, runtime.txt", "yes"],
     "include_gitpod_config": ["no, don't include .gitpod.yml", "yes"],
-    "project_template": ["hello_world", "cheat_sheet", "image_processing"],
-    "_copy_without_render": [
-        "*tests/__pycache__"
-    ]
+    "project_template": ["hello_world", "cheat_sheet", "image_processing", "data_science"]
 }

@@ -18,6 +18,7 @@ Share it on twitter `@garsbar35plus` or in the [Streamlit Discuss Forums](https:
     - [hello_world](#hello_world)
     - [cheat_sheet](#cheat_sheet)
     - [image_processing](#image_processing)
+    - [data_science](#data_science)
   - [Connect to your own Repo](#connect-to-your-own-repo)
   - [More Streamlit Resources](#more-streamlit-resources)
   - [Roadmap](#roadmap)
@@ -84,6 +85,12 @@ User can provide an image via URL, file upload, or webcam.
 
 Includes weights and configurations for YOLOv4-tiny on OpenCV from [darknet github](https://github.com/AlexeyAB/darknet), which will not apply to all projects.
 
+### data_science
+
+Roughly based on [DrivenData's](https://www.drivendata.org/competitions/) repo [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
+
+Provides a directory structure for data processing pipeline, feature engineering, model training, and displaying all of these along with model prediction in the main streamlit app.
+
 ## Connect to your own Repo
 
 Save your project and share with the world!
@@ -112,6 +119,7 @@ git push
 ## Roadmap
 
 - [ ] 🖥 Windows support
-- [ ] 📈 Data Science template
+- [ ] ⚓️ Docker support
+- [ ] Extended Makefile and example for Data Science template
 - [ ] 🗄 Database template
 - [ ] 📓 Text Processing template

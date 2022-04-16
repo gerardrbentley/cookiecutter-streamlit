@@ -1,13 +1,14 @@
 from pathlib import Path
 from datetime import date
 
-manifests = [
+delete_manifests = [
     '{% if cookiecutter.include_streamlit_config != "yes" %} .streamlit {% endif %}',
     '{% if cookiecutter.include_dev_setup != "yes" %} tests,.flake8,.pre-commit-config.yml,Makefile,pyproject.toml,requirements.dev.txt {% endif %}',
     '{% if cookiecutter.include_gitpod_config != "yes" %} .gitpod.yml {% endif %}',
     '{% if cookiecutter.include_heroku_deployment != "yes" %} app.json,Procfile,runtime.txt {% endif %}',
     '{% if cookiecutter.project_template != "cheat_sheet" %} LICENSE_streamlit_cheatsheet,logomark_website.png {% endif %}',
     '{% if cookiecutter.project_template != "image_processing" %} yolo {% endif %}',
+    '{% if cookiecutter.project_template != "data_science" %} src,data,models {% endif %}',
 ]
 
 
@@ -31,7 +32,7 @@ def promote_template():
 
 
 def remove_unwanted():
-    for files in manifests:
+    for files in delete_manifests:
         paths = files.strip().split(",")
         to_remove = [Path.cwd() / path for path in paths if path != '']
         recursive_remove(to_remove)
