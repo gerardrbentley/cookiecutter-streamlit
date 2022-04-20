@@ -31,7 +31,7 @@ Built with ❤️ by [{{ cookiecutter.github_username }}](https://github.com/{{ 
 - `requirements.dev.txt`: Provides packages useful for development but not necessarily production deployment. Also includes all of `requirements.txt` via `-r`
 - `pyproject.toml`: Provides a main configuration point for Python dev tools
 - `.flake8`: Because `flake8` doesn't play nicely with `pyproject.toml` out of the box
-- `.pre-commit-config.yml`: Provides safeguards for what you commit and push to your repo
+- `.pre-commit-config.yaml`: Provides safeguards for what you commit and push to your repo
 - `tests/`: Folder for tests to be picked up by `pytest`
 {% endif -%}
 {%- if do_heroku %}- `app.json`: Provides "Deploy to Heroku" functionality / specification
